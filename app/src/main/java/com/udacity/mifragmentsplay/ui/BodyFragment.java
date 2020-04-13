@@ -13,9 +13,9 @@ import androidx.fragment.app.Fragment;
 import com.udacity.mifragmentsplay.R;
 import com.udacity.mifragmentsplay.data.AndroidImageAssets;
 
-public class BodyPartFragment extends Fragment {
+public class BodyFragment extends Fragment {
 
-    public BodyPartFragment() {
+    public BodyFragment() {
     }
 
     @Nullable
@@ -23,7 +23,7 @@ public class BodyPartFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_body_part,container,false);
         ImageView imageView = rootView.findViewById(R.id.body_part_image_view);
-        imageView.setImageResource(AndroidImageAssets.getHeads().get(0));
+        imageView.setImageResource(AndroidImageAssets.getBodies().get(0));
         return  rootView;
     }
 }
