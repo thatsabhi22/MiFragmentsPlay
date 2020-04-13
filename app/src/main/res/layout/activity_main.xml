@@ -15,7 +15,7 @@
         android:padding="16dp">
 
         <FrameLayout
-            android:id="@+id/fragment_container"
+            android:id="@+id/header_container"
             android:layout_width="match_parent"
             android:layout_height="180dp"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -11,11 +11,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        TestFragment fragment = new TestFragment();
-//        getSupportFragmentManager()
-//                .beginTransaction()
-//                .add(R.id.fragment_container,fragment)
-//                .commit();
+        BodyPartFragment headFragment = new BodyPartFragment();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.header_container,headFragment)
+                .commit();
 
     }
 }
