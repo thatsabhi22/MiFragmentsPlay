@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.udacity.mifragmentsplay.R;
 import com.udacity.mifragmentsplay.data.AndroidImageAssets;
 
-public class MainActivity extends AppCompatActivity {
+public class BodyActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
