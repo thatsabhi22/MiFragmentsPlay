@@ -3,6 +3,7 @@ package com.udacity.mifragmentsplay.ui;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.udacity.mifragmentsplay.R;
+import com.udacity.mifragmentsplay.data.AndroidImageAssets;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,24 +12,28 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        HeadFragment headFragment = new HeadFragment();
+        BodyFragment headFragment = new BodyFragment();
+        headFragment.setmImageIds(AndroidImageAssets.getHeads());
+        headFragment.setmListIndex(0);
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.header_container,headFragment)
                 .commit();
 
         BodyFragment bodyFragment = new BodyFragment();
+        bodyFragment.setmImageIds(AndroidImageAssets.getBodies());
+        bodyFragment.setmListIndex(0);
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.body_container,bodyFragment)
                 .commit();
 
-        LegsFragment legsFragment = new LegsFragment();
+        BodyFragment legsFragment = new BodyFragment();
+        legsFragment.setmImageIds(AndroidImageAssets.getLegs());
+        legsFragment.setmListIndex(0);
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.legs_container,legsFragment)
                 .commit();
-
-
     }
 }
