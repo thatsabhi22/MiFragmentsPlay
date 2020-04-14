@@ -1,5 +1,6 @@
 package com.udacity.mifragmentsplay.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,9 +16,19 @@ public class BodyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if (savedInstanceState == null) {
+
+            Intent intent = getIntent();
+            int headIndex = 0,bodyIndex = 0,legIndex = 0;
+            Bundle b = intent.getExtras();
+            if(b!=null) {
+                headIndex = b.getInt("headIndex", 0);
+                bodyIndex = b.getInt("bodyIndex", 0);
+                legIndex = b.getInt("legIndex", 0);
+            }
+
             BodyFragment headFragment = new BodyFragment();
             headFragment.setmImageIds(AndroidImageAssets.getHeads());
-            headFragment.setmListIndex(0);
+            headFragment.setmListIndex(headIndex);
             getSupportFragmentManager()
                     .beginTransaction()
                     .add(R.id.header_container, headFragment)
@@ -25,7 +36,7 @@ public class BodyActivity extends AppCompatActivity {
 
             BodyFragment bodyFragment = new BodyFragment();
             bodyFragment.setmImageIds(AndroidImageAssets.getBodies());
-            bodyFragment.setmListIndex(0);
+            bodyFragment.setmListIndex(bodyIndex);
             getSupportFragmentManager()
                     .beginTransaction()
                     .add(R.id.body_container, bodyFragment)
@@ -33,7 +44,7 @@ public class BodyActivity extends AppCompatActivity {
 
             BodyFragment legsFragment = new BodyFragment();
             legsFragment.setmImageIds(AndroidImageAssets.getLegs());
-            legsFragment.setmListIndex(0);
+            legsFragment.setmListIndex(legIndex);
             getSupportFragmentManager()
                     .beginTransaction()
                     .add(R.id.legs_container, legsFragment)
