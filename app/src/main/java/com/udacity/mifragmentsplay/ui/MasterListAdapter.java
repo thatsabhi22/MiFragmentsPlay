@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -47,7 +48,7 @@ public class MasterListAdapter extends BaseAdapter {
     /**
      * Creates a new ImageView for each item referenced by the adapter
      */
-    public View getView(final int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, final View convertView, ViewGroup parent) {
         ImageView imageView;
         if (convertView == null) {
             // If the view is not recycled, this creates a new ImageView to hold an image
@@ -64,5 +65,4 @@ public class MasterListAdapter extends BaseAdapter {
         imageView.setImageResource(mImageIds.get(position));
         return imageView;
     }
-
 }

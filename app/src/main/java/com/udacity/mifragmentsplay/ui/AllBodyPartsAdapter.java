@@ -1,6 +1,7 @@
 package com.udacity.mifragmentsplay.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +39,15 @@ public class AllBodyPartsAdapter
     public void onBindViewHolder(@NonNull AllBodyPartsAdapter.AllBodyPartsViewHolder holder, int position) {
         final Integer current = parts.get(position);
         holder.singleBodyPartIV.setImageResource(current);
+
+        holder.itemView.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(mContext, BodyActivity.class);
+                        mContext.startActivity(intent);
+                    }
+                });
     }
 
     @Override
